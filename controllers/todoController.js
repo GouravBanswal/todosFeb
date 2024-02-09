@@ -27,7 +27,7 @@ exports.updateTodos = async(req,res) => {
 }
 exports.deleteTodos = async(req,res) => {
     try {
-        await Todo.findByIDAndDelete(req,params.id)
+        await Todo.findByIdAndDelete(req,params.id)
         res.status(200).json({message: "delete Success"})
     } catch (error) {
         res.status(500).json({message: error.message ||"somthing went wrong"})
